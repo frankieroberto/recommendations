@@ -1,0 +1,29 @@
+<% if @old_justification %>
+	<h1>Edit justification for <%= link_to h(@recommendation.name), recommendation_path(@recommendation)%></h1>
+<% else %>
+	<h1>Add justification for <%= link_to h(@recommendation.name), recommendation_path(@recommendation)%></h1>
+<% end %>
+
+<%= error_messages_for :justification %>
+
+<% if @preview == true %>
+
+<%= description_format(@justification.justification) %>
+
+<% end %>
+
+<% form_for(:justification, :url => recommendation_justifications_path) do |f| %>
+
+<% if @old_justification %>
+	<%= f.text_area :justification, :value => @old_justification.justification %>
+<% else %>
+	<%= f.text_area :justification %>
+<% end %>
+
+  <p>
+    <%= submit_tag "Save", :class => :submit %>
+    <%= submit_tag "Preview" %>
+
+	<%= cancel_link_to justification_recommendation_path(@recommendation)%>
+  </p>
+<% end %>

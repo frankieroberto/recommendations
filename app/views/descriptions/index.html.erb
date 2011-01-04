@@ -1,0 +1,22 @@
+<h1>Revision history for <%= link_to @recommendation.name, recommendation_path(@recommendation)%></h1>
+
+<p>There have been <%= pluralize(@recommendation.descriptions.count, "revision")%> of this recommendation.</p>
+
+
+<table>
+  <tr>
+	<th>Date changed</th>
+	<th>Word count</th>
+	<th>User</th>
+  </tr>
+
+<% for description in @descriptions %>
+  <tr>
+    <td><%= link_to time_ago_in_words(description.created_at), recommendation_description_path(@recommendation.id,description) %> ago</td>
+	<td><%= word_count(description.description)%>
+	<td><%= user_link(description.user) %></td>
+  </tr>
+<% end %>
+</table>
+
+<p><%= link_to 'New description', new_recommendation_description_path(@recommendation) %></p>

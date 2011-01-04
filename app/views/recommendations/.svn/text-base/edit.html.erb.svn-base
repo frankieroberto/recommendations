@@ -1,0 +1,17 @@
+
+<h1>Rename <%= link_to(h(@recommendation.name), @recommendation) %>?</h1>
+
+<%= error_messages_for :recommendation %>
+
+
+<% form_for(:recommendation, :url => recommendation_path(@recommendation), :html => { :method => :put }) do |f| %>
+
+	
+
+		<label for="recommendation_name">New name:</label> <%= f.text_field :name %>
+  <p>
+    <%= submit_tag "Save", {:class => "submit"} %>
+
+	<%= cancel_link_to recommendation_path(@recommendation) %>
+  </p>
+<% end %>

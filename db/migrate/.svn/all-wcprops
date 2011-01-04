@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 34
+/svn/!svn/ver/115/trunk/db/migrate
+END
+20080731072130_add_counter_caches.rb
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/76/trunk/db/migrate/20080731072130_add_counter_caches.rb
+END
+20080714171748_add_taggings_counter_cache.rb
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/38/trunk/db/migrate/20080714171748_add_taggings_counter_cache.rb
+END
+20080609161115_create_sessions.rb
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/2/trunk/db/migrate/20080609161115_create_sessions.rb
+END
+20081022072733_add_views_to_recommendations.rb
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/115/trunk/db/migrate/20081022072733_add_views_to_recommendations.rb
+END
+003_create_justifications.rb
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/2/trunk/db/migrate/003_create_justifications.rb
+END
+004_create_tags.rb
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/2/trunk/db/migrate/004_create_tags.rb
+END
+006_add_is_deleted_to_recommendations.rb
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/2/trunk/db/migrate/006_add_is_deleted_to_recommendations.rb
+END
+001_create_recommendations.rb
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/2/trunk/db/migrate/001_create_recommendations.rb
+END
+005_create_taggings.rb
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/2/trunk/db/migrate/005_create_taggings.rb
+END
+002_create_descriptions.rb
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/2/trunk/db/migrate/002_create_descriptions.rb
+END
+007_create_users.rb
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/2/trunk/db/migrate/007_create_users.rb
+END
+20080625165001_add_tags_counter_cache.rb
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/2/trunk/db/migrate/20080625165001_add_tags_counter_cache.rb
+END

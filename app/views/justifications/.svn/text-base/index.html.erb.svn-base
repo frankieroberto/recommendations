@@ -1,0 +1,24 @@
+
+<h1>Justification history for '<%= h(@recommendation.name) %>'</h1>
+
+<%= render :partial => "recommendations/navigation" %>
+
+
+
+<table>
+  <tr>
+	<th>Date changed</th>
+	<th>Word count</th>
+	<th>User</th>
+  </tr>
+  
+<% for justification in @justifications %>
+  <tr>
+    <td><%= link_to justification.created_at.to_s(:long), recommendation_justification_path(@recommendation.id,justification) %></td>
+	<td><%= word_count(justification.justification) %></td>
+	<td><%= user_link(justification.user) %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />

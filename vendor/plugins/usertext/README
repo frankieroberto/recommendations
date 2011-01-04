@@ -1,0 +1,35 @@
+Usertext
+========
+
+This plugin adds a bunch of helpers, the most important of which is usertext(), which takes user-inputted text and marks it up with HTML and appropriate typographic characters.
+
+The plugin's homepage is here: http://code.google.com/p/usertext/
+
+Example
+=======
+
+For example, the following string:
+
+"Hello world! This is an amazing plugin because...
+
+* it's smart
+* it's lightweight
+* it's easy to customise"
+
+would be transformed into:
+
+"<p>Hello world! This is an amazing plugin because…</p>
+
+<ul>
+<li>it’s smart</li>
+<li>it’s lightweight</li>
+<li>it’s easy to customise</li>
+</ul>"
+
+
+Contact and Copyright
+=========
+
+You can contact the author at frankie@frankieroberto.com with requests, suggestions and contributions. :)
+
+Copyright (c) 2008 Frankie Roberto, released under the MIT license

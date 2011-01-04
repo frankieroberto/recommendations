@@ -1,0 +1,40 @@
+<% @page_title = @recommendation.name %>
+<%= editable_resource_title(@recommendation, recommendation_path(@recommendation))%>
+
+<!--<div class="text_edit" id="text_edit"><div class="edit_info"><a href="/recommendations/4/edit" onclick="convertH1(); return false;">Rename?</a></div><h1 onclick="convertH1(); return false;" class="description">Test again</h1></div>	-->
+		
+<%= render :partial => "navigation" %>
+
+<% if @recommendation.description %>
+
+	<% if logged_in? %>
+		<%= editable_text(usertext(@recommendation.description.description), "Edit", new_recommendation_description_path(@recommendation)) %>
+	<% else %>
+		<%= usertext(@recommendation.description.description) %>
+	
+	<% end %>
+	
+
+
+<% else %>
+
+		<p>No description yet.</p>
+
+		<p><%= link_to "Add description", new_recommendation_description_path(@recommendation)%></p>	
+	
+<% end %>
+
+<p class="metadata">
+	Created by <%= user_link(@recommendation.user) %> <%= time_ago_in_words(@recommendation.created_at) %> ago.
+	<% if @recommendation.description %>
+	Last updated <%= (time_ago_in_words(@recommendation.description.updated_at))%> ago. 
+		<% if @recommendation.descriptions.count > 1 %>
+		There have been <%= link_to pluralize(@recommendation.descriptions.count, "revision"), recommendation_descriptions_path(@recommendation) %>.
+		<% end %>
+	<% end %>
+	Viewed <%= pluralize(@recommendation.views, "time") %>.
+</p>
+
+<p></p>
+
+<%= render(:partial => "taggings")%>

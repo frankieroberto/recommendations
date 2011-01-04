@@ -1,0 +1,14 @@
+<h1>New recommendation</h1>
+
+<%= error_messages_for :recommendation %>
+
+<% form_for(:recommendation, :url => recommendations_path) do |f| %>
+	
+	<div><label for="recommendation_name">Title:</label> <%= f.text_field :name %></div>
+	
+	<p>
+    <%= submit_tag "Publish", {:class => "submit"} %>
+		<%= cancel_link_to root_path %>
+
+  </p>
+<% end %>

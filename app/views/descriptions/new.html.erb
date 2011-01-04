@@ -1,0 +1,32 @@
+<% if @old_description 
+	@page_title = "Editing"
+elsif @preview == true 
+	@page_title = "Previewing"
+else
+	@page_title = "Adding"
+end  
+	@page_title += " description"
+%>
+
+<%= content_tag("h1", @page_title)%>
+
+
+<%= error_messages_for :description %>
+
+<% if @preview == true %>
+
+<%= description_format(@description.description) %>
+
+<% end %>
+
+<% form_for(:description, :url => recommendation_descriptions_path(@recommendation)) do |f| %>
+
+	<% if @old_description %>
+		<%= f.text_area :description, :value => @old_description.description %>
+	<% else %>
+		<%= f.text_area :description %>
+	<% end %>
+  <p>
+    <%= submit_tag "Save", {:class => "submit"} %> <%= submit_tag "Preview" %> <%= cancel_link_to recommendation_path(@recommendation)%>
+  </p>
+<% end %>

@@ -1,0 +1,13 @@
+<h1>Recommendations</h1>
+
+<% if @recommendations.size > 0 %>
+	<ul class="recommendations">
+		<% @recommendations.each do |r| %>
+			<li><%= link_to h(r.name), recommendation_path(r) %> <%= updated_or_created_date(r.created_at, r.updated_at)%>.</li>
+		<% end %>
+	</ul>
+<% else %>
+	<p>No recommendations created yet.</p>
+<% end %>
+
+<p><%= link_to "Add a recommendation", new_recommendation_path, :class => "add" %></p>

@@ -1,0 +1,8 @@
+<% @page_title = "Users" %>
+<%= title(@page_title)%>
+
+<ul>
+<% @users.each do |user| %>
+	<li><%= user_link user%> (joined <%= time_ago_in_words(user.created_at) %> ago)</li>	
+<% end %>
+</ul>

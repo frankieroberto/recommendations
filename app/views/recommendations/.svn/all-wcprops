@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/138/trunk/app/views/recommendations
+END
+edit.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/138/trunk/app/views/recommendations/edit.html.erb
+END
+index.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/114/trunk/app/views/recommendations/index.html.erb
+END
+undescribed.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/76/trunk/app/views/recommendations/undescribed.html.erb
+END
+new.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/132/trunk/app/views/recommendations/new.html.erb
+END
+unjustified.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/76/trunk/app/views/recommendations/unjustified.html.erb
+END
+_navigation.erb
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/72/trunk/app/views/recommendations/_navigation.erb
+END
+justification.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/110/trunk/app/views/recommendations/justification.html.erb
+END
+feed.atom.builder
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/97/trunk/app/views/recommendations/feed.atom.builder
+END
+untagged.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/39/trunk/app/views/recommendations/untagged.html.erb
+END
+_taggings.erb
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/130/trunk/app/views/recommendations/_taggings.erb
+END
+show.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/123/trunk/app/views/recommendations/show.html.erb
+END
+feed.rss.builder
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/97/trunk/app/views/recommendations/feed.rss.builder
+END

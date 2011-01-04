@@ -1,0 +1,25 @@
+
+<%= editable_resource_title(@recommendation, recommendation_path(@recommendation))%>
+
+<%= render :partial => "navigation" %>
+
+<% if @justification %>
+	
+	<%= editable_text(description_format(@justification.justification), "Edit", new_recommendation_justification_path(@recommendation)) %>
+	
+	<p class="metadata">Last updated <%= time_ago_in_words(@justification.updated_at) %> ago by <%= user_link(@justification.user)%>. 
+	<% if @recommendation.justifications.count > 1 %>
+		There have been <%= link_to pluralize(@recommendation.justifications.count, "revision"), recommendation_justifications_path(@recommendation) %>.
+	<% end %>
+	</p>
+	
+<% else %>
+
+	<p>No justifications yet.</p>
+	
+	<p><%= link_to "Add justification", new_recommendation_justification_path(@recommendation)%></p>
+	
+<% end %>
+
+<%= render(:partial => "taggings")%>
+

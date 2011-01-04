@@ -1,0 +1,14 @@
+<% @page_name = "Edit profile" %>
+
+<h1><%= @page_name %></h1>
+
+<p>Update your details below:</p>
+
+<% form_for(:user, :url => user_path(@user.username), :html => { :method => :put }) do |f| %>
+
+	<p><label for="email">E-mail address</label>: <%= f.text_field :email %></p>
+	
+  <p>
+    <%= submit_tag "Update" %>
+  </p>
+<% end %>

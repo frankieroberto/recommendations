@@ -1,0 +1,8 @@
+
+<%= resource_title(@recommendation, recommendation_path(@recommendation))%>
+	
+<%= render :partial => "recommendations/navigation" %>
+
+	<%= description_format(@description.description) %>
+	
+	<p>This description was created <%= time_ago_in_words(@description.updated_at) %> ago.</p>

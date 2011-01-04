@@ -1,0 +1,46 @@
+
+* {padding: 0; margin: 0;}
+
+body {padding: 0; margin: 0;}
+
+body div#page {margin: 0; padding: 0;}
+
+div#body {margin: 0;}
+
+p.search {width: auto; float: none; text-align: right; padding: 1em;}
+
+h1 {padding: .5em;}
+
+p.search input[type=text] {height: 2em; -webkit-border-radius: 4px;}
+p.search input.search {width: 5em; height: 2em; -webkit-border-radius: 10px; background-color: purple;}
+
+#body {font-family: Helvetica, Arial, sans-serif;}
+
+
+#body ul.recommendations {width: 100%; padding: 0; margin: 0; }
+
+
+#body ul.recommendations li {border-bottom: 1px solid #D9D9D9; font-size: 18px; line-height: 1.2em; }
+
+#body ul.recommendations li:first-child {border-top: 1px solid #D9D9D9;}
+
+
+#body ul.recommendations li {display: block; margin: 0; padding: .6em .6em .6em .6em;}
+
+#body p {padding: 1em; margin: 0;}
+
+#header p {padding: 1em;}
+#header div.site_identity *,
+#header form * {padding: 0;}
+
+div.pagination a {font-size: 1.4em; margin-left: 1em;}
+
+input {max-width: 12em;}
+
+div.editable_field div.edit_info {display: block;}
+
+div#body div.editable_field:focus,
+div#body div.editable_field:hover {display: block;}
+
+div.editable_field div.edit_info:focus,
+div.editable_field:hover div.edit_info {float: none; width:auto;}

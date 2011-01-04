@@ -1,0 +1,19 @@
+<% tag_links = Array.new %>
+<% @recommendation.taggings.each do |tagging| %>
+<% tag_links << tag_link(tagging) + " " + link_to("x", delete_tagging_path(tagging), :title => "Delete tag", :class => "delete") + ""%>
+<% end %>
+<% tag_links.sort! %>
+
+<%= content_tag("p", "Tagged: " + tag_links.to_sentence + ".", :class => "tags") unless tag_links.empty? %>
+
+<% if logged_in? %>
+	<% form_for(:tagging, :url => taggings_path) do |f| %>
+
+		<%= f.hidden_field :recommendation_id, {:value => @recommendation.id}  %>
+		<%= hidden_field_tag :return_to, "justification" if controller.action_name == "justification" %>
+
+		<%= f.text_field :tag_text %>
+		<%= submit_tag "Add tag" %>
+
+	<% end %>
+<% end%>

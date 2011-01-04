@@ -1,0 +1,5 @@
+
+<ul class="subnav">
+	<%= list_link_to "Description", recommendation_path(@recommendation) %>
+	<%= list_link_to "Justification", justification_recommendation_path(@recommendation) %>
+</ul>

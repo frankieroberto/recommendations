@@ -1,0 +1,11 @@
+<%= editable_resource_title(@recommendation, recommendation_path(@recommendation), edit_recommendation_path(@recommendation))%>
+
+<%= render :partial => "recommendations/navigation" %>
+
+<% unless @justification.id == @recommendation.justification.id %>
+	<p>Warning: this is an out of date justification. See <%= link_to "most recent", justification_recommendation_path(@recommendation) %>.</p>
+<% end %>
+
+	<%= editable_text(description_format(@justification.justification), "Edit", new_recommendation_justification_path(@recommendation)) %>
+
+<p>Saved by <%= user_link(@justification.user) %> <%= time_ago_in_words(@justification.created_at)%> ago.</p>

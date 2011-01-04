@@ -1,0 +1,11 @@
+<% @page_title = "Unjustified recommendations" %>
+<h1><%= @page_title %></h1>
+
+<p>There <%= pluralize_verb_noun(@recommendations.size, "recommendation") %> with no justification added:</p>
+
+<ul class="recommendations">
+
+<% for recommendation in @recommendations %>
+  <li><%= link_to h(recommendation.name), justification_recommendation_path(recommendation) %></li>
+<% end %>
+</ul>

@@ -1,0 +1,12 @@
+<h1>Editing justification</h1>
+
+<%= error_messages_for :justification %>
+
+<% form_for(:justification, :url => justification_path(@justification), :html => { :method => :put }) do |f| %>
+  <p>
+    <%= submit_tag "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', justification_path(@justification) %> |
+<%= link_to 'Back', justifications_path %>
