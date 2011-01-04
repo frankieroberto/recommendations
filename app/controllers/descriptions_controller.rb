@@ -1,6 +1,6 @@
 class DescriptionsController < ApplicationController
   
-  before_filter :login_required, :except => [:index, :show]
+#  before_filter :login_required, :except => [:index, :show]
   
   # GET /descriptions
   # GET /descriptions.xml

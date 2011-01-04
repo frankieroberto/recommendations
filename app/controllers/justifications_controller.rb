@@ -1,6 +1,6 @@
 class JustificationsController < ApplicationController
 
-  before_filter :login_required, :except => [:index, :show]
+#  before_filter :login_required, :except => [:index, :show]
 
   def index
     @recommendation = Recommendation.find(params[:recommendation_id])

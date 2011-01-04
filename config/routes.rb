@@ -1,19 +1,19 @@
 Recommendations::Application.routes.draw do
   
+  devise_for :users
+
   resources :users
-  resource :session
+  
   resources :users
   resources :taggings, :member => {:delete => :get}
   resources :tags, :requirements => {:id => /.+/}
-  resources :recommendations, :collection => {:search => :get, :untagged => :get, :undescribed => :get, :unjustified => :get, :feed => :get}, :member => {:justification => :get} do
+  resources :recommendations do
+    get 'justification', :on => :member
+
     resources :descriptions
     resources :justifications
   end
   
-  match 'register' => 'users#new'  
-  match 'login' => 'sessions#new'
-  match 'logout' => 'sessions#destroy'
-
   root :to => "homepage#index"
   
   

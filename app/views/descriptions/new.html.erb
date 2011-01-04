@@ -10,9 +10,6 @@ end
 
 <%= content_tag("h1", @page_title)%>
 
-
-<%= error_messages_for :description %>
-
 <% if @preview == true %>
 
 <%= description_format(@description.description) %>

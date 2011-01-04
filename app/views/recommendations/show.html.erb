@@ -7,8 +7,8 @@
 
 <% if @recommendation.description %>
 
-	<% if logged_in? %>
-		<%= editable_text(usertext(@recommendation.description.description), "Edit", new_recommendation_description_path(@recommendation)) %>
+	<% if user_signed_in? %>
+		<%= editable_text(usertext(@recommendation.description.description), "Edit".html_safe, new_recommendation_description_path(@recommendation)) %>
 	<% else %>
 		<%= usertext(@recommendation.description.description) %>
 	

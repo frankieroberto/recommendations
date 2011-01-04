@@ -1,6 +1,6 @@
 <% @page_title = @user.username %>
 
-<% if logged_in? && @user.id == current_user.id %>
+<% if user_signed_in? && @user.id == current_user.id %>
 	<%= title(@user.username, "(this is you)")%>
 <% else%>
 	<%= title(@user.username)%>
@@ -13,25 +13,25 @@
 
 @recommendations.each do |recommendation|
   
-  @activities << [recommendation.created_at, "Added " + link_to(h(recommendation.name), recommendation_path(recommendation)) + " " + time_ago_in_words(recommendation.created_at) +  " ago."]
+  @activities << [recommendation.created_at, "Added ".html_safe + link_to(h(recommendation.name), recommendation_path(recommendation)) + " " + time_ago_in_words(recommendation.created_at) +  " ago."]
 
 end
 
 @descriptions.each do |description|
 
-	@activities << [description.created_at, "Edited the description for " + link_to(h(description.recommendation.name), recommendation_path(description.recommendation)) + " " + time_ago_in_words(description.created_at) + " ago."]
+	@activities << [description.created_at, "Edited the description for ".html_safe + link_to(h(description.recommendation.name), recommendation_path(description.recommendation)) + " ".html_safe + time_ago_in_words(description.created_at) + " ago.".html_safe]
 
  end 
 
 @justifications.each do |justification|
 	
-  @activities << [justification.created_at, "Edited the justification for " + link_to(h(justification.recommendation.name), justification_recommendation_path(justification.recommendation)) + " " + time_ago_in_words(justification.created_at) + " ago."]
+  @activities << [justification.created_at, "Edited the justification for ".html_safe + link_to(h(justification.recommendation.name), justification_recommendation_path(justification.recommendation)) + " ".html_safe + time_ago_in_words(justification.created_at) + " ago.".html_safe]
 
 end
 
 @taggings.each do |tagging|
 	
-	@activities << [tagging.created_at, "Tagged " + link_to( h(tagging.recommendation.name), recommendation_path(tagging.recommendation)) + " with " + tag_link(tagging) + " " + time_ago_in_words(tagging.created_at) + " ago."]
+	@activities << [tagging.created_at, "Tagged ".html_safe + link_to( h(tagging.recommendation.name), recommendation_path(tagging.recommendation)) + " with ".html_safe + tag_link(tagging) + " ".html_safe + time_ago_in_words(tagging.created_at) + " ago.".html_safe]
 
 end
 

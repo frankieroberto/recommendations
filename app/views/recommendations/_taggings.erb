@@ -6,7 +6,7 @@
 
 <%= content_tag("p", "Tagged: " + tag_links.to_sentence + ".", :class => "tags") unless tag_links.empty? %>
 
-<% if logged_in? %>
+<% if user_signed_in? %>
 	<% form_for(:tagging, :url => taggings_path) do |f| %>
 
 		<%= f.hidden_field :recommendation_id, {:value => @recommendation.id}  %>

@@ -5,10 +5,11 @@
   <%= stylesheet_link_tag 'default' %>
   <%= stylesheet_link_tag 'iphone', :media => "only screen and (max-device-width: 480px)" %>
   <%= javascript_include_tag :defaults %>
-  <%= csrf_meta_tag %>
   <meta name="viewport" content="initial-scale = 1.0"></meta>
 	<%= auto_discovery_link_tag(:atom, recommendations_path(:format => :atom), :title => "Web feed").html_safe %>
 	<%= meta_tag("keywords", @recommendation.tags_csv) if @recommendation && @recommendation.tags_csv %>	
+	<%= csrf_meta_tag %>
+	
 </head>
 <body>
 	<div id="page">
@@ -19,15 +20,15 @@
 				<% #<p class="site_strapline"></p> %>
 			</div>	
 			
-			<% form_tag recommendations_path, :method => 'get' do %>
+			<%= form_tag recommendations_path, :method => 'get' do %>
 			    <%= text_field_tag :search, @search_string %>
 			    <%= submit_tag :search, :name => nil %>
 			<% end %>
 
 			<% if user_signed_in? %>
-			<p>You are logged in as <%= user_link current_user %> (<%= link_to "edit profile", edit_user_path(current_user.username)%>). <%= link_to "logout", logout_path, {:class => "logout"}%> </p>
+			<p>You are logged in as <%= link_to current_user.email, root_path %>. <%= link_to "logout", destroy_user_session_path, {:class => "logout"}%> </p>
 			<% else %>
-			<p><%= link_to "login", login_path%> or <%= link_to "register", register_path%></p>
+			<p><%= link_to "login", new_user_session_path %> or <%= link_to "register", new_user_registration_path %></p>
 			<% end %>
 			
 

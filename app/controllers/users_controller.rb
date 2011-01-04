@@ -21,7 +21,7 @@ class UsersController < ApplicationController
   end
   
   def show
-    @user = User.find_by_username(params[:id])
+    @user = User.find(params[:id])
     
     @recommendations = Recommendation.find(:all, :conditions => ["user_id = ?", @user.id], :limit => 10, :order => "created_at DESC")
     

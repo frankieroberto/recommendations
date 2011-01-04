@@ -18,7 +18,7 @@ module UserTextHelper
     text = auto_link_phone_numbers(text)
     text = block_element_markup(text)
 
-    return text
+    return text.html_safe
   end
 
   # Some typography magic...
@@ -96,7 +96,7 @@ module UserTextHelper
 
   def auto_link_phone_numbers(text)
     text.gsub(/(\s|^)((0|\+44)\d{10,10})\b/) do 
-      text = $1 + "<a href=\"tel:" + $2 + "\">" + $2 + "</a>"
+      text = $1 + "<a href=\"tel:".html_safe + $2 + "\">".html_safe + $2 + "</a>".html_safe
     end
   end
 
@@ -137,8 +137,8 @@ module UserTextHelper
     auto_link_urls(text)
   end
 
-  def auto_link_urls(text, href_options = {})
-    extra_options = tag_options(href_options.stringify_keys) || ""
+  def usertext_auto_link_urls(text, href_options = {})
+    extra_options = tag_options(href_options.stringify_keys) || "".html_safe
 
     auto_link_re = %r{
      (                          # leading text
@@ -161,14 +161,14 @@ module UserTextHelper
     text.gsub(auto_link_re) do
       all, a, b, c, d = $&, $1, $2, $3, $5
 
-      text = a + "<a href=\"" + b + c + "\">" + truncate_in_middle(c, 40) + "</a>" + $5
+      text = (a + "<a href=\"".html_safe + b + c + "\">".html_safe + truncate(c) + "</a>".html_safe + $5).html_safe
     end
   end
 
   # This helper is like the trunctate() method included in Rails core, but truncates
   # in the middle of the string rather than at the end. This is useful for things like
   # URLs, which it is sometimes helpful to show the beginning and the end.
-  def truncate_in_middle(text, length = 30, truncate_string = "...")
+  def truncate_in_middle(text, length = 30, truncate_string = "...".html_safe)
     if text
       l = (length - truncate_string.length) / 2
       return text if length > text.length

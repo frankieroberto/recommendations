@@ -8,9 +8,11 @@ module ApplicationHelper
   
   def tag_link(tagging, rel_link = true)
     if rel_link
-      link_to(h(tagging.tag_text), tag_path(tagging.tag.name), {:rel => "tag"})
+      return ""
+      #link_to(h(tagging.tag_text), tag_path(tagging.tag.name), {:rel => "tag"})
     else
       link_to(h(tagging.tag_text), tag_path(tagging.tag.name))
+      return ""
     end
   end
   
