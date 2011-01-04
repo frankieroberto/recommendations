@@ -77,7 +77,7 @@ module ApplicationHelper
   end
   
   def link_to_homepage(text)
-    link_to(text, homepage_path)
+    link_to(text, root_path)
   end
   
   def word_count(string)
@@ -166,10 +166,5 @@ module ApplicationHelper
       "updated " + time_ago_in_words(updated_at) + " ago"
     end
   end
-  
-  # HTML4 version of tag helper
-  def tag(name, options = nil, open = false, escape = true)
-    return "<#{name}#{tag_options(options, escape) if options}#{open ? ">" : " ></#{name}>"}"
-  end
-  
+    
 end
